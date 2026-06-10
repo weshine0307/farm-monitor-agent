@@ -30,10 +30,10 @@ body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(-
 .topbar a:hover{background:rgba(255,255,255,.12);color:#fff}
 
 /* hero */
-.hero{background:linear-gradient(160deg,#2B6A7C 0%,#3D7A8A 45%,#4A8A96 100%);color:#fff;padding:3.2rem 2rem 2.6rem;text-align:center}
+.hero{background:#2B6A7C;color:#fff;padding:3.2rem 2rem 2.6rem;text-align:center}
 .hero .tag{font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.75;color:#A8E0D0}
 .hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;margin:.5rem 0 .6rem;line-height:1.3}
-.hero p{font-size:clamp(.86rem,1.6vw,1rem);opacity:.9;max-width:640px;margin:0 auto;line-height:1.7}
+.hero p{font-size:clamp(.86rem,1.6vw,1rem);opacity:.9;max-width:640px;margin:0 auto;line-height:1.7;text-align:justify}
 .hero .chips{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.2rem}
 .hero .chips span{font-size:.75rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:.3rem .8rem;border-radius:20px}
 
@@ -52,7 +52,7 @@ body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(-
 .demo-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:.8rem;margin-bottom:1rem}
 .demo-head .section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent)}
 .demo-head h2{font-size:clamp(1.3rem,3vw,1.6rem);color:var(--primary);font-weight:700}
-.demo-head p{font-size:15px;color:var(--light-text);max-width:560px;margin-top:.2rem}
+.demo-head p{font-size:15px;color:var(--light-text);max-width:640px;margin-top:.2rem}
 .sim-controls{display:flex;gap:.6rem;align-items:center}
 .btn{display:inline-flex;align-items:center;gap:.45rem;border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:.82rem;padding:.6rem 1.1rem;border-radius:10px;transition:.2s}
 .btn-play{background:var(--primary);color:#fff}
@@ -107,11 +107,11 @@ body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(-
 
 /* agent trace — RAG → prompt → generation 透明化 */
 .agent-trace{margin-top:.6rem;border-top:1px dashed rgba(0,0,0,.12);padding-top:.5rem}
-.agent-trace summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--primary-light);list-style:none;display:flex;align-items:center;gap:.35rem;user-select:none}
+.agent-trace summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--primary);list-style:none;display:flex;align-items:center;gap:.45rem;user-select:none;background:var(--accent-soft);border:1px solid rgba(108,196,176,.4);border-radius:8px;padding:.45rem .7rem}
 .agent-trace summary::-webkit-details-marker{display:none}
-.agent-trace summary .caret{transition:transform .2s;font-size:12px}
+.agent-trace summary .caret{transition:transform .2s;font-size:18px;line-height:1;color:var(--primary-light)}
 .agent-trace[open] summary .caret{transform:rotate(90deg)}
-.agent-trace summary:hover{color:var(--primary)}
+.agent-trace summary:hover{background:#d8efe8;color:var(--primary)}
 .trace-step{margin-top:.6rem}
 .trace-label{display:inline-block;font-size:14px;font-weight:700;color:var(--primary);background:var(--accent-soft);border:1px solid rgba(108,196,176,.3);border-radius:6px;padding:.12rem .5rem;margin-bottom:.3rem}
 .trace-kb{list-style:none;padding:0;margin:.1rem 0 0}
@@ -128,7 +128,7 @@ body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(-
 .how .inner{max-width:1120px;margin:0 auto}
 .how .section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent)}
 .how h2{font-size:clamp(1.3rem,3vw,1.6rem);color:var(--primary);font-weight:700;margin:.3rem 0 .3rem}
-.how .lead{font-size:15px;color:var(--light-text);max-width:620px;margin-bottom:1.6rem}
+.how .lead{font-size:15px;color:var(--light-text);max-width:620px;margin-bottom:.6rem}
 .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin-bottom:1.8rem}
 .flow-step{background:#fff;border-radius:12px;padding:1rem;box-shadow:var(--card-shadow);position:relative}
 .flow-step .n{width:26px;height:26px;border-radius:50%;background:var(--primary);color:#fff;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;font-family:'Inter',sans-serif}
@@ -162,12 +162,12 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 .note svg.info{width:18px;height:18px;flex:none;vertical-align:-4px;color:var(--primary-light)}
 
 /* architecture schematic */
-.schematic{background:transparent;padding:1.3rem 0 .9rem;margin-bottom:1.5rem;overflow-x:auto}
+.schematic{background:transparent;padding:.3rem 0 .9rem;margin-bottom:1.5rem;overflow-x:auto}
 .schematic svg{display:block;min-width:700px;width:100%;height:auto}
 .schematic .cap{font-size:.78rem;color:var(--light-text);text-align:center;margin-top:.6rem}
 
 /* flow diagram */
-.flowchart{display:flex;align-items:center;overflow-x:auto;padding-bottom:.5rem;margin-bottom:1.6rem}
+.flowchart{display:flex;align-items:stretch;overflow-x:auto;padding-bottom:.5rem;margin-bottom:1.6rem}
 .fc-step{flex:1 0 150px;min-width:150px;background:#fff;border-radius:12px;padding:1rem .9rem;box-shadow:var(--card-shadow);border-top:3px solid var(--accent)}
 .fc-step .n{width:26px;height:26px;border-radius:50%;background:var(--primary);color:#fff;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;font-family:'Inter',sans-serif}
 .fc-step h4{font-size:18px;color:var(--primary);margin-bottom:.25rem}
@@ -261,7 +261,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
   <div class="inner">
     <div class="section-label">Under the Hood</div>
     <h2>系統架構</h2>
-    <p class="lead">本服務並非將感測數值視覺化為圖表，而是建構「感知—研判—建議—推播」的閉環流程：AI Agent 依作物生育階段檢索知識庫、研判環境風險並生成處置建議——此即生成式 AI 應用規劃所需設計的服務流程與資料架構。</p>
+    <p class="lead">本服務不只把感測數值畫成圖表，而是建構「感知→研判→建議→推播」的閉環：AI Agent 依作物生育階段檢索知識庫、研判風險並生成處置建議。</p>
 
     <div class="schematic">
       <svg viewBox="0 0 780 300" role="img" aria-label="系統架構示意圖">
@@ -285,7 +285,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
         <text x="388" y="218" text-anchor="start" font-size="12" fill="#6B8585">檢索</text>
         <!-- outputs -->
         <rect x="455" y="96" width="168" height="52" rx="10" fill="#fff" stroke="#6CC4B0" stroke-width="1.8"/>
-        <text x="539" y="127" text-anchor="middle" font-size="14" font-weight="600" fill="#2B6A7C">白話風險警示</text>
+        <text x="539" y="127" text-anchor="middle" font-size="14" font-weight="600" fill="#2B6A7C">風險警示訊息</text>
         <rect x="455" y="180" width="168" height="52" rx="10" fill="#fff" stroke="#6CC4B0" stroke-width="1.8"/>
         <text x="539" y="203" text-anchor="middle" font-size="14" font-weight="600" fill="#2B6A7C">異常地塊定位</text>
         <text x="539" y="221" text-anchor="middle" font-size="12" fill="#6B8585">（地圖標示）</text>
@@ -298,7 +298,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
         <line x1="623" y1="122" x2="663" y2="140" stroke="#4A9BAD" stroke-width="2" marker-end="url(#ah)"/>
         <line x1="623" y1="206" x2="663" y2="164" stroke="#4A9BAD" stroke-width="2" marker-end="url(#ah)"/>
       </svg>
-      <div class="cap">圖：系統架構示意 —— 感測資料經 AI Agent 研判（檢索 RAG 知識庫）後，輸出告警推播與地塊定位</div>
+      <div class="cap">圖：系統架構示意 —— 感測資料經 AI Agent 研判（檢索 RAG 知識庫）後，輸出風險警示與地塊定位</div>
     </div>
 
     <h2 style="margin-top:2.6rem">運作流程</h2>
@@ -430,13 +430,13 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
   }
 
   // ---- 依 plot/reading/檢索結果組裝送進模型的 prompt（透明化展示） ----
-  function buildPrompt(p, r, st, ai){
+  function buildPrompt(p, r, st, ai, timeLabel){
     var soilLabel = p.range.kind==='water' ? '水位／含水' : '土壤含水';
     var ctx = ai.kb.map(function(k){ return '  - '+k.replace(/<\/?b>/g,''); }).join('\n');
     return '<span class="pk">System</span>　你是農場環境監測 AI Agent，依作物別與生育階段研判環境風險。\n'
       + '<span class="pk">Context（RAG 檢索結果）</span>\n' + ctx + '\n'
-      + '<span class="pk">當前感測</span>　'+p.name+'・'+p.crop+'・'+TIMES[step]+'：氣溫 '+r.t+'°C、濕度 '+r.h+'%、'+soilLabel+' '+r.s+'%\n'
-      + '<span class="pk">Task</span>　判斷是否異常；若異常，生成白話處置建議並說明判讀依據。';
+      + '<span class="pk">當前感測</span>　'+p.name+'・'+p.crop+'・'+timeLabel+'：氣溫 '+r.t+'°C、濕度 '+r.h+'%、'+soilLabel+' '+r.s+'%\n'
+      + '<span class="pk">Task</span>　判斷是否異常；若異常，生成處置建議並說明判讀依據。';
   }
 
   // ---- map setup（圖層順序：面 → 點，符合製圖規則） ----
@@ -475,6 +475,27 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
     L0.marker.on('click', function(){ selectPlot(p.id); });
   }
 
+  // ---- 全日彙總：每塊取整段時間最嚴重的狀態 ----
+  var RANK = {normal:0, warning:1, danger:2};
+  var cumulative = false;
+  function worstOfPlot(p){
+    var best = {step:0, st:statusOf(p, p.series[0])};
+    for(var i=1;i<p.series.length;i++){
+      var s = statusOf(p, p.series[i]);
+      if(RANK[s.level] > RANK[best.st.level]) best = {step:i, st:s};
+    }
+    return best;
+  }
+  function renderCumulative(){
+    cumulative = true;
+    document.getElementById('clock').textContent = '全日彙總';
+    PLOTS.forEach(function(p){
+      var w = worstOfPlot(p);
+      layers[p.id].poly.setStyle({fillColor:COLORS[w.st.level], fillOpacity: w.st.level==='normal'?.5:.7});
+      setMarker(p, w.st);
+    });
+  }
+
   // ---- render a given timestep ----
   var feedItems = [];
   function render(prevLevels){
@@ -508,7 +529,12 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
   function selectPlot(id){
     selectedId = id;
     var p = PLOTS.find(function(x){return x.id===id;});
-    var r = p.series[step];
+    var useStep = step, timeLabel;
+    if(cumulative){
+      var w = worstOfPlot(p); useStep = w.step;
+      timeLabel = w.st.level==='normal' ? '全日正常' : TIMES[useStep]+'（當日最嚴重時段）';
+    } else { timeLabel = TIMES[useStep]; }
+    var r = p.series[useStep];
     var st = statusOf(p, r);
     var ai = buildAI(p, r, st);
     var d = document.getElementById('detail');
@@ -517,7 +543,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
     var sAlert = (st.type==='dry'||st.type==='flood') ? ' alert' : '';
     d.innerHTML =
       '<h3>'+p.name+' <span class="status-pill '+st.level+'">'+(st.level==='normal'?'正常':st.level==='warning'?'警示':'異常')+'</span></h3>'+
-      '<div class="crop">'+p.crop+'　·　'+TIMES[step]+'</div>'+
+      '<div class="crop">'+p.crop+'　·　'+timeLabel+'</div>'+
       '<div class="readings">'+
         '<div class="reading"><div class="rv'+tAlert+'">'+r.t+'°</div><div class="rl">氣溫</div></div>'+
         '<div class="reading"><div class="rv">'+r.h+'%</div><div class="rl">濕度</div></div>'+
@@ -528,14 +554,13 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
         '<div style="font-weight:700">'+ai.head+'</div>'+
         '<div class="row">'+ai.msg+'</div>'+
         (st.level!=='normal' ? '<div class="row"><b>建議處置：</b>'+ai.act+'</div>' : '')+
-        '<div class="why">💬 為什麼這樣判讀 ── '+ai.why+'</div>'+
         '<details class="agent-trace">'+
-          '<summary><span class="caret">▸</span> 看 AI Agent 怎麼想出這個（RAG 檢索 → 組 Prompt → 生成）</summary>'+
+          '<summary><span class="caret">▸</span> AI Agent 判斷流程（RAG 檢索 → 組 Prompt → 生成）</summary>'+
           '<div class="trace-step"><span class="trace-label">① 從 RAG 知識庫檢索</span>'+
             '<ul class="trace-kb">'+ai.kb.map(function(k){return '<li>'+k+'</li>';}).join('')+'</ul>'+
           '</div>'+
           '<div class="trace-step"><span class="trace-label">② 組裝送進模型的 Prompt</span>'+
-            '<div class="trace-prompt">'+buildPrompt(p, r, st, ai)+'</div>'+
+            '<div class="trace-prompt">'+buildPrompt(p, r, st, ai, timeLabel)+'</div>'+
           '</div>'+
           '<div class="trace-step"><span class="trace-label">③ 模型生成</span>'+
             '<div class="trace-gen">→ 即上方<b>'+ai.head+'</b>研判與處置建議</div>'+
@@ -555,7 +580,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
     if(timer) clearInterval(timer);
     timer = setInterval(function(){
       var prev = levelsSnapshot();
-      if(step >= TIMES.length-1){ clearInterval(timer); timer=null; btn.disabled=false; btn.textContent='▶ 重新播放'; return; }
+      if(step >= TIMES.length-1){ clearInterval(timer); timer=null; btn.disabled=false; btn.textContent='▶ 重新播放'; renderCumulative(); if(selectedId) selectPlot(selectedId); return; }
       step++;
       document.getElementById('clock').textContent = TIMES[step];
       render(prev);
@@ -564,7 +589,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
   }
   function reset(){
     if(timer){ clearInterval(timer); timer=null; }
-    step = 0; selectedId = null;
+    step = 0; selectedId = null; cumulative = false;
     document.getElementById('clock').textContent = TIMES[0];
     document.getElementById('playBtn').disabled = false;
     document.getElementById('playBtn').textContent = '▶ 模擬一天';
