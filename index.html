@@ -21,7 +21,7 @@
 }
 html{scroll-behavior:smooth}
 @font-face{font-family:'jf-openhuninn';src:url('./fonts/jf-openhuninn-2.1.ttf') format('truetype')}
-body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(--text);line-height:1.75;background:var(--bg)}
+body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(--text);line-height:1.75;background:linear-gradient(180deg,#D4EEF3 0%,#DAF0EA 22%,#E8EDDF 50%,#F0ECE2 75%,#F5F0E8 100%);background-attachment:fixed;text-align:justify}
 
 /* top bar */
 .topbar{position:sticky;top:0;z-index:1000;background:rgba(43,106,124,.95);backdrop-filter:blur(10px);height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,2.5rem);box-shadow:0 2px 16px rgba(43,106,124,.12)}
@@ -42,15 +42,17 @@ body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(-
 .ctx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
 .ctx-card{background:#fff;border-radius:var(--radius);padding:1.2rem 1.3rem;box-shadow:var(--card-shadow);border:1px solid rgba(0,0,0,.04)}
 .ctx-card .ic{font-size:1.3rem}
-.ctx-card h3{font-size:.92rem;color:var(--primary);margin:.3rem 0 .25rem}
-.ctx-card p{font-size:.8rem;color:var(--light-text);line-height:1.6}
+.ctx-head{display:flex;align-items:center;gap:.55rem;margin:.1rem 0 .35rem}
+  .ctx-card .ic .ic-svg{width:22px;height:22px}
+  .ctx-card h3{font-size:15px;color:var(--primary);margin:0}
+.ctx-card p{font-size:13.5px;color:var(--light-text);line-height:1.6}
 
 /* demo */
 .demo-wrap{max-width:1120px;margin:0 auto;padding:1.8rem 1.5rem 2rem}
 .demo-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:.8rem;margin-bottom:1rem}
 .demo-head .section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent)}
 .demo-head h2{font-size:clamp(1.3rem,3vw,1.6rem);color:var(--primary);font-weight:700}
-.demo-head p{font-size:.84rem;color:var(--light-text);max-width:560px;margin-top:.2rem}
+.demo-head p{font-size:15px;color:var(--light-text);max-width:560px;margin-top:.2rem}
 .sim-controls{display:flex;gap:.6rem;align-items:center}
 .btn{display:inline-flex;align-items:center;gap:.45rem;border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:.82rem;padding:.6rem 1.1rem;border-radius:10px;transition:.2s}
 .btn-play{background:var(--primary);color:#fff}
@@ -73,69 +75,69 @@ body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(-
 /* panel */
 .panel{display:flex;flex-direction:column;gap:.9rem}
 .feed{background:#fff;border-radius:var(--radius);box-shadow:var(--card-shadow);border:1px solid rgba(0,0,0,.05);overflow:hidden}
-.feed-head{background:var(--primary);color:#fff;padding:.6rem 1rem;font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:.5rem}
-.feed-head .badge{margin-left:auto;background:rgba(255,255,255,.2);border-radius:20px;padding:.1rem .6rem;font-size:.75rem;font-family:'Inter',sans-serif}
+.feed-head{background:var(--primary);color:#fff;padding:.6rem 1rem;font-size:14px;font-weight:600;display:flex;align-items:center;gap:.5rem}
+.feed-head .badge{margin-left:auto;background:rgba(255,255,255,.2);border-radius:20px;padding:.1rem .6rem;font-size:14px;font-family:'Inter',sans-serif}
 .feed-body{max-height:175px;overflow-y:auto;padding:.6rem}
-.feed-empty{font-size:.8rem;color:var(--light-text);text-align:center;padding:1.5rem .5rem}
-.push{border-left:3px solid var(--warn);background:#FFFBF4;border-radius:8px;padding:.5rem .7rem;margin-bottom:.5rem;font-size:.78rem;animation:slideIn .4s ease}
+.feed-empty{font-size:14px;color:var(--light-text);text-align:center;padding:1.5rem .5rem}
+.push{border-left:3px solid var(--warn);background:#FFFBF4;border-radius:8px;padding:.5rem .7rem;margin-bottom:.5rem;font-size:14px;animation:slideIn .4s ease}
 .push.danger{border-left-color:var(--danger);background:#FFF5F5}
 .push .pt{font-weight:700;color:var(--text)}
 .push .pm{color:var(--light-text);margin-top:.15rem;line-height:1.55}
 @keyframes slideIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
 
 .detail{background:#fff;border-radius:var(--radius);box-shadow:var(--card-shadow);border:1px solid rgba(0,0,0,.05);padding:1rem 1.1rem;min-height:230px}
-.detail .placeholder{color:var(--light-text);font-size:.84rem;text-align:center;padding:2.5rem 1rem;line-height:1.7}
+.detail .placeholder{color:var(--light-text);font-size:14px;text-align:center;padding:2.5rem 1rem;line-height:1.7}
 .detail h3{font-size:1rem;color:var(--primary);display:flex;align-items:center;gap:.5rem}
-.status-pill{font-size:.75rem;font-weight:700;padding:.15rem .6rem;border-radius:20px;color:#fff}
+.status-pill{font-size:14px;font-weight:700;padding:.15rem .6rem;border-radius:20px;color:#fff}
 .status-pill.normal{background:var(--ok)} .status-pill.warning{background:var(--warn)} .status-pill.danger{background:var(--danger)}
-.detail .crop{font-size:.78rem;color:var(--light-text);margin:.1rem 0 .7rem}
+.detail .crop{font-size:14px;color:var(--light-text);margin:.1rem 0 .7rem}
 .readings{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:.8rem}
 .reading{background:var(--gray);border-radius:8px;padding:.5rem;text-align:center}
 .reading .rv{font-family:'Inter',sans-serif;font-weight:700;font-size:1.1rem;color:var(--primary)}
 .reading .rv.alert{color:var(--danger)}
-.reading .rl{font-size:.75rem;color:var(--light-text);margin-top:.1rem}
-.ai-box{border-radius:10px;padding:.75rem .85rem;font-size:.8rem;line-height:1.6}
+.reading .rl{font-size:14px;color:var(--light-text);margin-top:.1rem}
+.ai-box{border-radius:10px;padding:.75rem .85rem;font-size:14px;line-height:1.6}
 .ai-box.normal{background:var(--accent-soft);border:1px solid rgba(108,196,176,.3)}
 .ai-box.warning{background:#FFFBF4;border:1px solid rgba(255,184,77,.35)}
 .ai-box.danger{background:#FFF5F5;border:1px solid rgba(255,107,107,.35)}
-.ai-box .ai-tag{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:700;color:var(--primary-light);margin-bottom:.35rem;letter-spacing:.5px}
+.ai-box .ai-tag{display:inline-flex;align-items:center;gap:.3rem;font-size:14px;font-weight:700;color:var(--primary-light);margin-bottom:.35rem;letter-spacing:.5px}
 .ai-box .row{margin-top:.5rem}
 .ai-box .row b{color:var(--text)}
-.ai-box .why{margin-top:.55rem;padding-top:.5rem;border-top:1px dashed rgba(0,0,0,.12);font-size:.75rem;color:var(--light-text)}
+.ai-box .why{margin-top:.55rem;padding-top:.5rem;border-top:1px dashed rgba(0,0,0,.12);font-size:14px;color:var(--light-text)}
 
 /* agent trace — RAG → prompt → generation 透明化 */
 .agent-trace{margin-top:.6rem;border-top:1px dashed rgba(0,0,0,.12);padding-top:.5rem}
-.agent-trace summary{cursor:pointer;font-size:.75rem;font-weight:700;color:var(--primary-light);list-style:none;display:flex;align-items:center;gap:.35rem;user-select:none}
+.agent-trace summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--primary-light);list-style:none;display:flex;align-items:center;gap:.35rem;user-select:none}
 .agent-trace summary::-webkit-details-marker{display:none}
-.agent-trace summary .caret{transition:transform .2s;font-size:.7rem}
+.agent-trace summary .caret{transition:transform .2s;font-size:12px}
 .agent-trace[open] summary .caret{transform:rotate(90deg)}
 .agent-trace summary:hover{color:var(--primary)}
 .trace-step{margin-top:.6rem}
-.trace-label{display:inline-block;font-size:.72rem;font-weight:700;color:var(--primary);background:var(--accent-soft);border:1px solid rgba(108,196,176,.3);border-radius:6px;padding:.12rem .5rem;margin-bottom:.3rem}
+.trace-label{display:inline-block;font-size:14px;font-weight:700;color:var(--primary);background:var(--accent-soft);border:1px solid rgba(108,196,176,.3);border-radius:6px;padding:.12rem .5rem;margin-bottom:.3rem}
 .trace-kb{list-style:none;padding:0;margin:.1rem 0 0}
-.trace-kb li{font-size:.74rem;color:var(--light-text);line-height:1.55;padding-left:.9rem;position:relative;margin-bottom:.2rem}
+.trace-kb li{font-size:14px;color:var(--light-text);line-height:1.55;padding-left:.9rem;position:relative;margin-bottom:.2rem}
 .trace-kb li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700}
 .trace-kb li b{color:var(--text);font-weight:600}
-.trace-prompt{font-family:'Inter','SFMono-Regular',Consolas,monospace;font-size:.7rem;line-height:1.55;color:#3a4f4f;background:#F3F6F4;border:1px solid rgba(43,106,124,.14);border-radius:8px;padding:.55rem .65rem;white-space:pre-wrap;word-break:break-word;margin-top:.1rem}
+.trace-prompt{font-family:'Inter','SFMono-Regular',Consolas,monospace;font-size:14px;line-height:1.55;color:#3a4f4f;background:#F3F6F4;border:1px solid rgba(43,106,124,.14);border-radius:8px;padding:.55rem .65rem;white-space:pre-wrap;word-break:break-word;margin-top:.1rem}
 .trace-prompt .pk{color:var(--primary);font-weight:700}
-.trace-gen{font-size:.74rem;color:var(--light-text);margin-top:.15rem}
+.trace-gen{font-size:14px;color:var(--light-text);margin-top:.15rem}
 .trace-gen b{color:var(--primary-light)}
 
 /* how it works */
-.how{background:var(--gray);margin-top:.5rem;padding:2.6rem 1.5rem}
+.how{background:transparent;margin-top:.5rem;padding:2.6rem 1.5rem}
 .how .inner{max-width:1120px;margin:0 auto}
 .how .section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent)}
 .how h2{font-size:clamp(1.3rem,3vw,1.6rem);color:var(--primary);font-weight:700;margin:.3rem 0 .3rem}
-.how .lead{font-size:.85rem;color:var(--light-text);max-width:620px;margin-bottom:1.6rem}
+.how .lead{font-size:15px;color:var(--light-text);max-width:620px;margin-bottom:1.6rem}
 .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin-bottom:1.8rem}
 .flow-step{background:#fff;border-radius:12px;padding:1rem;box-shadow:var(--card-shadow);position:relative}
 .flow-step .n{width:26px;height:26px;border-radius:50%;background:var(--primary);color:#fff;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;font-family:'Inter',sans-serif}
 .flow-step h4{font-size:.82rem;color:var(--primary);margin-bottom:.2rem}
 .flow-step p{font-size:.75rem;color:var(--light-text);line-height:1.55}
 .kb{background:#fff;border-radius:var(--radius);padding:1.3rem 1.5rem;box-shadow:var(--card-shadow)}
-.kb h3{font-size:.92rem;color:var(--primary);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
+.kb h3{font-size:16px;color:var(--primary);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
 .kb-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-.kb-tags span{font-size:.76rem;background:var(--accent-soft);color:var(--primary);border:1px solid rgba(108,196,176,.3);padding:.3rem .7rem;border-radius:8px}
+.kb-tags span{font-size:14px;background:var(--accent-soft);color:var(--primary);border:1px solid rgba(108,196,176,.3);padding:.3rem .7rem;border-radius:8px}
 
 /* note + footer */
 .note{max-width:1120px;margin:1.6rem auto 0;padding:0 1.5rem}
@@ -160,7 +162,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 .note svg.info{width:18px;height:18px;flex:none;vertical-align:-4px;color:var(--primary-light)}
 
 /* architecture schematic */
-.schematic{background:#fff;border-radius:var(--radius);box-shadow:var(--card-shadow);padding:1.3rem 1.3rem .9rem;margin-bottom:1.5rem;overflow-x:auto}
+.schematic{background:transparent;padding:1.3rem 0 .9rem;margin-bottom:1.5rem;overflow-x:auto}
 .schematic svg{display:block;min-width:700px;width:100%;height:auto}
 .schematic .cap{font-size:.78rem;color:var(--light-text);text-align:center;margin-top:.6rem}
 
@@ -168,8 +170,8 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 .flowchart{display:flex;align-items:center;overflow-x:auto;padding-bottom:.5rem;margin-bottom:1.6rem}
 .fc-step{flex:1 0 150px;min-width:150px;background:#fff;border-radius:12px;padding:1rem .9rem;box-shadow:var(--card-shadow);border-top:3px solid var(--accent)}
 .fc-step .n{width:26px;height:26px;border-radius:50%;background:var(--primary);color:#fff;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;font-family:'Inter',sans-serif}
-.fc-step h4{font-size:.84rem;color:var(--primary);margin-bottom:.25rem}
-.fc-step p{font-size:.78rem;color:var(--light-text);line-height:1.55}
+.fc-step h4{font-size:18px;color:var(--primary);margin-bottom:.25rem}
+.fc-step p{font-size:15px;color:var(--light-text);line-height:1.55}
 .fc-arrow{flex:none;color:var(--primary-light);padding:0 .3rem;display:flex;align-items:center}
 .fc-arrow svg{width:22px;height:22px}
 @media(max-width:760px){.flowchart{flex-direction:column;align-items:stretch}.fc-step{flex:none}.fc-arrow{transform:rotate(90deg);align-self:center;padding:.3rem 0}}
@@ -195,23 +197,19 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 <div class="context">
   <div class="ctx-grid">
     <div class="ctx-card">
-      <div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg></div>
-      <h3>情境</h3>
+      <div class="ctx-head"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg></div><h3>情境</h3></div>
       <p>農場已佈設量測溫度、濕度、土壤含水量的 IoT 感測器，資料量龐大且分散於各儀表板，仰賴人工持續判讀。</p>
     </div>
     <div class="ctx-card">
-      <div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-      <h3>痛點</h3>
+      <div class="ctx-head"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h3>痛點</h3></div>
       <p>人力難以全時段監看；即使讀到數值，也未必能即時對應到應採取的處置，異常往往延遲發現。</p>
     </div>
     <div class="ctx-card">
-      <div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v2M15 1v2M9 21v2M15 21v2M1 9h2M1 15h2M21 9h2M21 15h2"/></svg></div>
-      <h3>AI 解法</h3>
+      <div class="ctx-head"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v2M15 1v2M9 21v2M15 21v2M1 9h2M1 15h2M21 9h2M21 15h2"/></svg></div><h3>AI 解法</h3></div>
       <p>AI Agent 持續比對知識庫中各作物的環境適宜區間與風險閾值，研判異常後生成處置建議並主動推播。</p>
     </div>
     <div class="ctx-card">
-      <div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-      <h3>空間定位</h3>
+      <div class="ctx-head"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>空間定位</h3></div>
       <p>將異常風險定位至特定地塊，輔助判斷處置優先順序——此空間維度源自 GIS 圖資專業。</p>
     </div>
   </div>
@@ -222,7 +220,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
   <div class="demo-head">
     <div>
       <div class="section-label">Live Prototype</div>
-      <h2>互動原型：點選地塊檢視 AI 研判，或模擬單日週期觀察主動推播</h2>
+      <h2>互動地圖：點選地塊檢視 AI 研判，或模擬單日週期觀察主動推播</h2>
       <p>點按「▶ 模擬一天」推進時間軸（06:00 → 翌日 02:00），感測值隨之變動。當任一地塊偏離作物適宜區間，地圖即時更新狀態色彩並標示告警，右側面板同步接收 AI 推播。</p>
     </div>
     <div class="sim-controls">
@@ -262,7 +260,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 <div class="how">
   <div class="inner">
     <div class="section-label">Under the Hood</div>
-    <h2>系統架構與運作流程</h2>
+    <h2>系統架構</h2>
     <p class="lead">本服務並非將感測數值視覺化為圖表，而是建構「感知—研判—建議—推播」的閉環流程：AI Agent 依作物生育階段檢索知識庫、研判環境風險並生成處置建議——此即生成式 AI 應用規劃所需設計的服務流程與資料架構。</p>
 
     <div class="schematic">
@@ -279,15 +277,15 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
         <text x="316" y="140" text-anchor="middle" font-size="17" font-weight="700" fill="#2B6A7C">AI Agent</text>
         <text x="316" y="163" text-anchor="middle" font-size="12.5" fill="#6B8585">研判引擎 · 任務編排</text>
         <!-- rag -->
-        <path d="M250 240 V275 a66 11 0 0 0 132 0 V240" fill="#fff" stroke="#4A9BAD" stroke-width="1.5"/>
-        <ellipse cx="316" cy="240" rx="66" ry="11" fill="#E8F5F0" stroke="#4A9BAD" stroke-width="1.5"/>
-        <text x="316" y="262" text-anchor="middle" font-size="13" font-weight="600" fill="#2B6A7C">RAG 知識庫</text>
-        <line x1="309" y1="202" x2="309" y2="231" stroke="#4A9BAD" stroke-width="1.8" marker-end="url(#ah)"/>
-        <line x1="323" y1="231" x2="323" y2="202" stroke="#4A9BAD" stroke-width="1.8" marker-end="url(#ah)"/>
-        <text x="392" y="222" text-anchor="start" font-size="12" fill="#6B8585">檢索</text>
+        <path d="M252 236 V278 a64 11 0 0 0 128 0 V236" fill="#fff" stroke="#4A9BAD" stroke-width="1.5"/>
+        <ellipse cx="316" cy="236" rx="64" ry="11" fill="#E8F5F0" stroke="#4A9BAD" stroke-width="1.5"/>
+        <text x="316" y="266" text-anchor="middle" font-size="13" font-weight="600" fill="#2B6A7C">RAG 知識庫</text>
+        <line x1="309" y1="202" x2="309" y2="223" stroke="#4A9BAD" stroke-width="1.8" marker-end="url(#ah)"/>
+        <line x1="323" y1="223" x2="323" y2="202" stroke="#4A9BAD" stroke-width="1.8" marker-end="url(#ah)"/>
+        <text x="388" y="218" text-anchor="start" font-size="12" fill="#6B8585">檢索</text>
         <!-- outputs -->
         <rect x="455" y="96" width="168" height="52" rx="10" fill="#fff" stroke="#6CC4B0" stroke-width="1.8"/>
-        <text x="539" y="127" text-anchor="middle" font-size="14" font-weight="600" fill="#2B6A7C">白話告警推播</text>
+        <text x="539" y="127" text-anchor="middle" font-size="14" font-weight="600" fill="#2B6A7C">白話風險警示</text>
         <rect x="455" y="180" width="168" height="52" rx="10" fill="#fff" stroke="#6CC4B0" stroke-width="1.8"/>
         <text x="539" y="203" text-anchor="middle" font-size="14" font-weight="600" fill="#2B6A7C">異常地塊定位</text>
         <text x="539" y="221" text-anchor="middle" font-size="12" fill="#6B8585">（地圖標示）</text>
@@ -303,7 +301,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
       <div class="cap">圖：系統架構示意 —— 感測資料經 AI Agent 研判（檢索 RAG 知識庫）後，輸出告警推播與地塊定位</div>
     </div>
 
-    <h3 style="font-size:1rem;font-weight:600;color:var(--primary);margin:1.4rem 0 .9rem">運作流程</h3>
+    <h2 style="margin-top:2.6rem">運作流程</h2>
     <div class="flowchart">
       <div class="fc-step"><div class="n">1</div><h4>感測資料擷取</h4><p>持續擷取各地塊溫度、濕度、土壤含水量之時序資料。</p></div>
       <div class="fc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
