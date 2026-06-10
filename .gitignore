@@ -5,3 +5,6 @@ __pycache__/
 # Office 暫存鎖檔
 ~$*
 *.tmp
+
+# 封面原始大圖(本機保留,不入公開repo)
+cover/

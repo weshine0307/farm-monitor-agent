@@ -23,7 +23,7 @@
 farm-monitor-agent/
 ├── index.html                 # 主頁（自給自足，雙擊即可開）
 ├── fonts/jf-openhuninn-2.1.ttf
-└── images/farm_monitor_cover.svg
+└── images/farm_monitor_cover.jpg
 ```
 
 ## 部署
