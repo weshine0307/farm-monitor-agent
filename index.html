@@ -79,18 +79,32 @@ body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(-
 .legend span{display:inline-flex;align-items:center;gap:.35rem}
 .legend .dot{width:13px;height:13px;border-radius:3px;display:inline-block}
 
-/* panel */
-.panel{display:flex;flex-direction:column;gap:.9rem}
-.feed{background:#fff;border-radius:var(--radius);box-shadow:var(--card-shadow);border:1px solid rgba(0,0,0,.05);overflow:hidden}
-.feed-head{background:var(--primary);color:#fff;padding:.6rem 1rem;font-size:14px;font-weight:600;display:flex;align-items:center;gap:.5rem}
-.feed-head .badge{margin-left:auto;background:rgba(255,255,255,.2);border-radius:20px;padding:.1rem .6rem;font-size:14px;font-family:'Inter',sans-serif}
-.feed-body{max-height:175px;overflow-y:auto;padding:.6rem}
-.feed-empty{font-size:14px;color:var(--light-text);text-align:center;padding:1.5rem .5rem}
-.push{border-left:3px solid var(--warn);background:#FFFBF4;border-radius:8px;padding:.5rem .7rem;margin-bottom:.5rem;font-size:14px;animation:slideIn .4s ease}
-.push.danger{border-left-color:var(--danger);background:#FFF5F5}
-.push .pt{font-weight:700;color:var(--text)}
-.push .pm{color:var(--light-text);margin-top:.15rem;line-height:1.55}
-@keyframes slideIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+/* panel: 右欄＝手機上的 LINE 對話 */
+.panel{display:flex;flex-direction:column;min-height:0;align-self:start}
+.phone{height:560px;width:100%;max-width:300px;margin:0 auto;display:flex;flex-direction:column}
+.phone-screen{flex:1;background:#8aa9cf;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 24px rgba(43,106,124,.15)}
+.line-header{flex:none;background:#06C755;color:#fff;padding:.55rem .55rem;display:flex;align-items:center;gap:.4rem}
+.lh-back{font-size:21px;line-height:1;margin-right:.05rem}
+.lh-av{width:30px;height:30px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;flex:none}
+.lh-name{flex:1;font-weight:700;font-size:13px;line-height:1.2}
+.lh-sub{display:block;font-size:12px;font-weight:500;opacity:.9}
+.lh-tag{flex:none;background:rgba(255,255,255,.25);border-radius:12px;padding:.1rem .5rem;font-size:12px;font-weight:600}
+.line-body{flex:1;overflow-y:auto;padding:.7rem .55rem;display:flex;flex-direction:column;gap:.7rem;min-height:0}
+.feed-empty{margin:auto;font-size:12px;color:#3f5168;background:rgba(255,255,255,.6);border-radius:12px;padding:.6rem .85rem;text-align:center;line-height:1.6}
+.msg{display:flex;gap:.4rem;align-items:flex-end;cursor:pointer;animation:slideIn .35s ease}
+.msg-av{width:30px;height:30px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;flex:none;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.msg-bubble{max-width:76%;background:#fff;border-radius:4px 16px 16px 16px;padding:.5rem .65rem;box-shadow:0 1px 1px rgba(0,0,0,.12)}
+.mb-head{font-weight:700;font-size:13px;color:#2c3e3e;display:flex;align-items:center;gap:.3rem}
+.mb-dot{width:7px;height:7px;border-radius:50%;background:var(--warn);flex:none}
+.msg-bubble.danger .mb-dot{background:var(--danger)}
+.mb-text{font-size:13px;color:#52605f;line-height:1.5;margin-top:.2rem}
+.mb-map{background:#eef3f8;border-radius:8px;padding:5px;margin-bottom:.4rem}
+.mb-map svg{display:block;width:100%;height:auto}
+.msg-time{font-size:12px;color:rgba(255,255,255,.92);align-self:flex-end;flex:none;margin-bottom:2px}
+.line-input{flex:none;background:#fff;padding:.45rem .55rem;display:flex;align-items:center;gap:.45rem}
+.li-box{flex:1;background:#f0f0f0;border-radius:16px;padding:.35rem .7rem;color:#9aabb0;font-size:12px}
+.li-send{width:26px;height:26px;border-radius:50%;background:#06C755;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;flex:none}
+@keyframes slideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 .detail{background:#fff;border-radius:var(--radius);box-shadow:var(--card-shadow);border:1px solid rgba(0,0,0,.05);padding:1rem 1.1rem;min-height:230px}
 .detail .placeholder{color:var(--light-text);font-size:14px;text-align:center;padding:2.5rem 1rem;line-height:1.7}
@@ -213,7 +227,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
     </div>
     <div class="ctx-card">
       <div class="ctx-head"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v2M15 1v2M9 21v2M15 21v2M1 9h2M1 15h2M21 9h2M21 15h2"/></svg></div><h3>AI 解法</h3></div>
-      <p>AI Agent 持續比對知識庫中各作物的環境適宜區間與風險閾值，研判異常後生成處置建議並主動推播。</p>
+      <p>AI Agent 持續比對知識庫中各作物的環境適宜區間與風險閾值，研判異常後生成處置建議並透過 LINE 主動推播。</p>
     </div>
     <div class="ctx-card">
       <div class="ctx-head"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>空間定位</h3></div>
@@ -228,7 +242,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
     <div>
       <div class="section-label">Live Prototype</div>
       <h2>互動地圖：點選地塊檢視 AI 研判，或模擬單日週期觀察主動推播</h2>
-      <p>點按「▶ 模擬一天」推進時間軸（06:00 → 翌日 02:00），感測值隨之變動。當任一地塊偏離作物適宜區間，地圖即時更新狀態色彩並標示告警，右側面板同步接收 AI 推播。</p>
+      <p>點按「▶ 模擬一天」推進時間軸（06:00 → 翌日 02:00），感測值隨之變動。當任一地塊偏離作物適宜區間，地圖即時更新狀態色彩並標示告警，右側模擬 LINE 官方帳號即時收到推播通知。</p>
     </div>
     <div class="sim-controls">
       <div class="clock" id="clock">06:00</div>
@@ -246,18 +260,25 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
         <span><i class="dot" style="background:#FF6B6B"></i>異常（寒害／熱害）</span>
         <span style="margin-left:auto;font-style:italic">＊資料為情境模擬，非真實感測值</span>
       </div>
+      <div class="detail" id="detail">
+        <div class="placeholder">點選地圖上任一地塊，<br>檢視該地塊的感測數據與 AI 研判結果。</div>
+      </div>
     </div>
 
     <div class="panel">
-      <div class="feed">
-        <div class="feed-head"><svg class="li" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> AI 即時推播 <span class="badge" id="feedCount">0</span></div>
-        <div class="feed-body" id="feed">
-          <div class="feed-empty" id="feedEmpty">目前無異常。點按「▶ 模擬一天」開始監測，或點選地塊檢視 AI 研判。</div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="line-header">
+            <span class="lh-back">&#8249;</span>
+            <span class="lh-av">🌱</span>
+            <span class="lh-name">農場守護 AI</span>
+            <span class="lh-tag">示意</span>
+          </div>
+          <div class="line-body" id="feed">
+            <div class="feed-empty" id="feedEmpty">目前無異常，農場守護 AI 尚未發送通知。<br>點「▶ 模擬一天」開始監測。</div>
+          </div>
+          <div class="line-input"><span class="li-box">輸入訊息</span><span class="li-send">&#10148;</span></div>
         </div>
-      </div>
-
-      <div class="detail" id="detail">
-        <div class="placeholder">點選地圖上任一地塊，<br>檢視該地塊的感測數據與 AI 研判結果。</div>
       </div>
     </div>
   </div>
@@ -292,7 +313,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
         <text x="388" y="218" text-anchor="start" font-size="12" fill="#6B8585">檢索</text>
         <!-- outputs -->
         <rect x="455" y="96" width="168" height="52" rx="10" fill="#fff" stroke="#6CC4B0" stroke-width="1.8"/>
-        <text x="539" y="127" text-anchor="middle" font-size="14" font-weight="600" fill="#2B6A7C">風險警示訊息</text>
+        <text x="539" y="127" text-anchor="middle" font-size="14" font-weight="600" fill="#2B6A7C">LINE 白話推播</text>
         <rect x="455" y="180" width="168" height="52" rx="10" fill="#fff" stroke="#6CC4B0" stroke-width="1.8"/>
         <text x="539" y="203" text-anchor="middle" font-size="14" font-weight="600" fill="#2B6A7C">異常地塊定位</text>
         <text x="539" y="221" text-anchor="middle" font-size="12" fill="#6B8585">（地圖標示）</text>
@@ -305,7 +326,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
         <line x1="623" y1="122" x2="663" y2="140" stroke="#4A9BAD" stroke-width="2" marker-end="url(#ah)"/>
         <line x1="623" y1="206" x2="663" y2="164" stroke="#4A9BAD" stroke-width="2" marker-end="url(#ah)"/>
       </svg>
-      <div class="cap">圖：系統架構示意 —— 感測資料經 AI Agent 研判（檢索 RAG 知識庫）後，輸出風險警示與地塊定位</div>
+      <div class="cap">圖：系統架構示意 —— 感測資料經 AI Agent 研判（檢索 RAG 知識庫）後，輸出 LINE 推播與地塊定位</div>
     </div>
 
     <h2 style="margin-top:2.6rem">運作流程</h2>
@@ -318,7 +339,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
       <div class="fc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       <div class="fc-step"><div class="n">4</div><h4>生成處置建議</h4><p>產生具可操作性之處置建議，並附判讀依據。</p></div>
       <div class="fc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="fc-step"><div class="n">5</div><h4>推播與定位</h4><p>主動推送告警，並於地圖標示異常地塊以利定位。</p></div>
+      <div class="fc-step"><div class="n">5</div><h4>LINE 推播與定位</h4><p>透過 LINE 主動推送白話告警，並於地圖標示異常地塊以利定位。</p></div>
     </div>
 
     <div class="kb">
@@ -518,18 +539,33 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
     });
   }
 
+  // 小地圖縮圖：5 地塊布局，告警地塊以狀態色標示
+  function miniMap(id, level){
+    var LAY={A:[6,4],B:[58,4],C:[6,27],D:[58,27],E:[6,50]};
+    var col = level==='danger'?'#FF6B6B':(level==='warning'?'#FFB84D':'#5BBF8A');
+    var out='<svg viewBox="0 0 110 73">';
+    for(var k in LAY){
+      var x=LAY[k][0], y=LAY[k][1], on=(k===id);
+      out+='<rect x="'+x+'" y="'+y+'" width="46" height="19" rx="4" fill="'+(on?col:'#dde4ec')+'" stroke="'+(on?'#fff':'#cdd6e0')+'" stroke-width="1.2"/>';
+      out+='<text x="'+(x+23)+'" y="'+(y+13.5)+'" text-anchor="middle" font-size="11" font-weight="700" fill="'+(on?'#fff':'#94a2b1')+'">'+k+'</text>';
+    }
+    if(LAY[id]){ var mx=LAY[id][0]+23, my=LAY[id][1]; out+='<path d="M'+mx+' '+(my-7)+' l-4 -7 a4.5 4.5 0 1 1 8 0 z" fill="'+col+'" stroke="#fff" stroke-width="1"/><circle cx="'+mx+'" cy="'+(my-12)+'" r="1.6" fill="#fff"/>'; }
+    out+='</svg>';
+    return out;
+  }
+
   function pushFeed(p, r, st){
     var ai = buildAI(p, r, st);
-    feedItems.unshift({});
     document.getElementById('feedEmpty').style.display='none';
     var feed = document.getElementById('feed');
-    var div = document.createElement('div');
-    div.className = 'push '+st.level;
-    div.innerHTML = '<div class="pt">'+TIMES[step]+'　'+ai.head+'　'+p.name+'</div><div class="pm">'+ai.msg+'</div>';
-    div.onclick = function(){ selectPlot(p.id); };
-    div.style.cursor='pointer';
-    feed.insertBefore(div, feed.firstChild);
-    document.getElementById('feedCount').textContent = feed.querySelectorAll('.push').length;
+    var row = document.createElement('div');
+    row.className = 'msg';
+    row.innerHTML = '<span class="msg-av">🌱</span>'+
+      '<div class="msg-bubble '+st.level+'"><div class="mb-map">'+miniMap(p.id, st.level)+'</div><div class="mb-head"><span class="mb-dot"></span>'+ai.head+'　'+p.name+'</div><div class="mb-text">'+ai.msg+'</div></div>'+
+      '<span class="msg-time">'+TIMES[step]+'</span>';
+    row.onclick = function(){ selectPlot(p.id); };
+    feed.appendChild(row);
+    feed.scrollTop = feed.scrollHeight;
   }
 
   // ---- detail panel ----
@@ -601,9 +637,8 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
     document.getElementById('playBtn').disabled = false;
     document.getElementById('playBtn').textContent = '▶ 模擬一天';
     var feed = document.getElementById('feed');
-    feed.querySelectorAll('.push').forEach(function(n){ n.remove(); });
+    feed.querySelectorAll('.msg').forEach(function(n){ n.remove(); });
     document.getElementById('feedEmpty').style.display='block';
-    document.getElementById('feedCount').textContent = '0';
     document.getElementById('detail').innerHTML = '<div class="placeholder">點選地圖上任一地塊，<br>檢視該地塊的感測數據與 AI 研判結果。</div>';
     render(null);
   }
