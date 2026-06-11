@@ -25,13 +25,23 @@
 }
 html{scroll-behavior:smooth}
 @font-face{font-family:'jf-openhuninn';src:url('./fonts/jf-openhuninn-2.1.ttf') format('truetype')}
-body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(--text);line-height:1.75;background:linear-gradient(180deg,#D4EEF3 0%,#DAF0EA 22%,#E8EDDF 50%,#F0ECE2 75%,#F5F0E8 100%);background-attachment:fixed;text-align:justify}
+body{font-family:'jf-openhuninn','Noto Sans TC',system-ui,sans-serif;color:var(--text);line-height:1.75;background:linear-gradient(180deg,#D4EEF3 0%,#DAF0EA 20%,#E8EDDF 42%,#F0ECE2 64%,#F5F0E8 84%,#EDE6DA 100%);text-align:justify}
 
 /* top bar */
 .topbar{position:sticky;top:0;z-index:1000;background:rgba(43,106,124,.95);backdrop-filter:blur(10px);height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,2.5rem);box-shadow:0 2px 16px rgba(43,106,124,.12)}
-.topbar .logo{color:#fff;font-weight:700;font-size:.86rem;letter-spacing:.4px}
-.topbar a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.78rem;display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.3);border-radius:8px;transition:.2s}
-.topbar a:hover{background:rgba(255,255,255,.12);color:#fff}
+.topbar .logo{color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.4px;white-space:nowrap}
+.topbar .back-link{color:rgba(255,255,255,.5);text-decoration:none;font-size:.78rem;display:flex;align-items:center;gap:.3rem;transition:color .2s;white-space:nowrap}
+.topbar .back-link:hover{color:#fff}
+.topbar .nav-menu{position:relative}
+.topbar .nav-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:500;letter-spacing:.5px;padding:.35rem .8rem;border-radius:6px;border:1px solid rgba(255,255,255,.25);transition:all .2s}
+.topbar .nav-menu summary::-webkit-details-marker{display:none}
+.topbar .nav-menu summary:hover,.topbar .nav-menu[open] summary{background:rgba(255,255,255,.12);color:#fff}
+.topbar .nav-menu summary svg{transition:transform .2s}
+.topbar .nav-menu[open] summary svg{transform:rotate(180deg)}
+.topbar .nav-menu-panel{position:absolute;top:calc(100% + 10px);right:0;display:flex;flex-direction:column;min-width:150px;padding:.4rem;background:rgba(43,106,124,.97);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:10px;box-shadow:0 8px 30px rgba(15,23,42,.28);z-index:1001}
+.topbar .nav-menu-panel a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.78rem;letter-spacing:.5px;padding:.5rem .7rem;border-radius:6px;transition:all .15s}
+.topbar .nav-menu-panel a:hover{background:rgba(255,255,255,.12);color:#fff}
+@media(max-width:560px){.topbar .logo{max-width:46vw;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.topbar .back-link span{display:none}}
 
 /* hero */
 .hero{position:relative;overflow:hidden;background:#2B6A7C url('./images/farm_monitor_cover.jpg') center/cover no-repeat;color:#fff;padding:3.2rem 2rem 2.6rem;text-align:center}
@@ -201,8 +211,21 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 <body>
 
 <div class="topbar">
-  <div class="logo">GIS × 生成式 AI · Demo</div>
-  <a href="https://wschtw.com/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回作品集</a>
+  <a href="https://wschtw.com/" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <span>返回作品集</span>
+  </a>
+  <span class="logo">農場環境監測 AI Agent</span>
+  <details class="nav-menu">
+    <summary>目錄
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="nav-menu-panel">
+      <a href="#context">應用情境</a>
+      <a href="#demo">互動 Demo</a>
+      <a href="#how">運作流程</a>
+    </div>
+  </details>
 </div>
 
 <section class="hero">
@@ -215,7 +238,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 </section>
 
 <!-- CONTEXT -->
-<div class="context">
+<div class="context" id="context">
   <div class="ctx-grid">
     <div class="ctx-card">
       <div class="ctx-head"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg></div><h3>情境</h3></div>
@@ -237,7 +260,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 </div>
 
 <!-- DEMO -->
-<div class="demo-wrap">
+<div class="demo-wrap" id="demo">
   <div class="demo-head">
     <div>
       <div class="section-label">Live Prototype</div>
@@ -285,7 +308,7 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 </div>
 
 <!-- HOW IT WORKS -->
-<div class="how">
+<div class="how" id="how">
   <div class="inner">
     <div class="section-label">Under the Hood</div>
     <h2>系統架構</h2>
@@ -647,6 +670,11 @@ footer .div{width:54px;height:2px;background:var(--accent);margin:.9rem auto;opa
 
   render(null);  // initial
 })();
+</script>
+<script>
+// nav 目錄下拉：選後收合、點選單外收合
+document.querySelectorAll('.nav-menu-panel a').forEach(function(a){a.addEventListener('click',function(){var d=a.closest('details');if(d)d.open=false;});});
+document.addEventListener('click',function(e){document.querySelectorAll('details.nav-menu[open]').forEach(function(d){if(!d.contains(e.target))d.open=false;});});
 </script>
 </body>
 </html>
